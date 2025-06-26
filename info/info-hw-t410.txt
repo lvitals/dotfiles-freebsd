@@ -1,0 +1,267 @@
+Hardware Report - HOSTNAME_REDACTED
+Generated on: qui 26 jun 2025 17:41:37 -03
+------------------------------------------
+
+[ Hostname ]
+HOSTNAME_REDACTED
+
+[ System Information ]
+FreeBSD HOSTNAME_REDACTED 14.3-RELEASE FreeBSD 14.3-RELEASE releng/14.3-n271432-8c9ce319fef7 GENERIC amd64
+
+[ CPU ]
+Intel(R) Core(TM) i5 CPU       M 520  @ 2.40GHz
+Cores: 4
+
+[ Memory ]
+Total RAM: 7947 MB
+
+[ Disks ]
+Geom name: ada1
+Providers:
+1. Name: ada1
+   Mediasize: 500107862016 (466G)
+   Sectorsize: 512
+   Stripesize: 4096
+   Stripeoffset: 0
+   Mode: r2w2e3
+   descr: Hitachi HTS545050A7E380
+   lunid: 5000cca6f7e1d580
+   ident: TE85113RJDEA7N
+   rotationrate: 5400
+   fwsectors: 63
+   fwheads: 16
+
+Geom name: ada0
+Providers:
+1. Name: ada0
+   Mediasize: 256060514304 (238G)
+   Sectorsize: 512
+   Stripesize: 4096
+   Stripeoffset: 0
+   Mode: r2w2e3
+   descr: SAMSUNG SSD PM851 mSATA 256GB
+   lunid: 5002538844584d30
+   ident: S1EVNSAG117142
+   rotationrate: 0
+   fwsectors: 63
+   fwheads: 16
+
+
+[ Filesystems ]
+Filesystem            Size    Used   Avail Capacity  Mounted on
+zroot/ROOT/default    671G     12G    659G     2%    /
+devfs                 1,0K      0B    1,0K     0%    /dev
+zroot/var/log         659G    412K    659G     0%    /var/log
+zroot/usr/src         660G    858M    659G     0%    /usr/src
+zroot/var/audit       659G     96K    659G     0%    /var/audit
+zroot/var/tmp         659G     96K    659G     0%    /var/tmp
+zroot/var/crash       659G     96K    659G     0%    /var/crash
+zroot                 659G     96K    659G     0%    /zroot
+zroot/var/mail        659G    128K    659G     0%    /var/mail
+zroot/home            659G     96K    659G     0%    /home
+zroot/usr/ports       660G    1,0G    659G     0%    /usr/ports
+zroot/tmp             659G     14M    659G     0%    /tmp
+zroot/home/leandro    661G    1,4G    659G     0%    /home/leandro
+linprocfs             8,0K      0B    8,0K     0%    /compat/linux/proc
+linsysfs              8,0K      0B    8,0K     0%    /compat/linux/sys
+devfs                 1,0K      0B    1,0K     0%    /compat/linux/dev
+fdescfs               1,0K      0B    1,0K     0%    /compat/linux/dev/fd
+tmpfs                 8,4G    4,0K    8,4G     0%    /compat/linux/dev/shm
+map -hosts              0B      0B      0B   100%    /net
+
+[ Network Interfaces ]
+em0: flags=8802<BROADCAST,SIMPLEX,MULTICAST> metric 0 mtu 1500
+	options=4e524bb<RXCSUM,TXCSUM,VLAN_MTU,VLAN_HWTAGGING,JUMBO_MTU,VLAN_HWCSUM,LRO,WOL_MAGIC,VLAN_HWFILTER,VLAN_HWTSO,RXCSUM_IPV6,TXCSUM_IPV6,HWSTATS,MEXTPG>
+	ether XX:XX:XX:XX:XX:XX
+	media: Ethernet autoselect
+	status: no carrier
+	nd6 options=29<PERFORMNUD,IFDISABLED,AUTO_LINKLOCAL>
+lo0: flags=1008049<UP,LOOPBACK,RUNNING,MULTICAST,LOWER_UP> metric 0 mtu 16384
+	options=680003<RXCSUM,TXCSUM,LINKSTATE,RXCSUM_IPV6,TXCSUM_IPV6>
+	inet XXX.XXX.XXX.XXX netmask 0xff000000
+	inet6 XXX:XXX:XXX:XXX:XXX prefixlen 128
+	inet6 XXX:XXX:XXX:XXX:XXX%lo0 prefixlen 64 scopeid 0x2
+	groups: lo
+	nd6 options=21<PERFORMNUD,AUTO_LINKLOCAL>
+wlan0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
+	options=0
+	ether XX:XX:XX:XX:XX:XX
+	inet XXX.XXX.XXX.XXX netmask 0xffffff00 broadcast 192.168.3.255
+	inet6 XXX:XXX:XXX:XXX:XXX%wlan0 prefixlen 64 scopeid 0x3
+	inet6 XXX:XXX:XXX:XXX:XXX prefixlen 64 autoconf pltime 3600 vltime 7200
+	groups: wlan
+	ssid SSID_REDACTED
+	regdomain FCC country US authmode WPA2/802.11i privacy ON
+	deftxkey UNDEF AES-CCM 2:128-bit txpower 30 bmiss 10 scanvalid 60
+	protmode CTS ampdulimit 64k ampdudensity 4 -amsdutx amsdurx shortgi
+	-stbc -ldpc -uapsd wme roaming MANUAL
+	parent interface: iwn0
+	media: IEEE 802.11 Wireless Ethernet MCS mode 11ng
+	status: associated
+	nd6 options=23<PERFORMNUD,ACCEPT_RTADV,AUTO_LINKLOCAL>
+
+[ PCI Devices ]
+hostb0@pci0:255:0:0:	class=0x060000 rev=0x02 hdr=0x00 vendor=0x8086 device=0x2c62 subvendor=0x17aa subdevice=0x2196
+    vendor     = 'Intel Corporation'
+    device     = 'Core Processor QuickPath Architecture Generic Non-core Registers'
+    class      = bridge
+    subclass   = HOST-PCI
+hostb1@pci0:255:0:1:	class=0x060000 rev=0x02 hdr=0x00 vendor=0x8086 device=0x2d01 subvendor=0x17aa subdevice=0x2196
+    vendor     = 'Intel Corporation'
+    device     = 'Core Processor QuickPath Architecture System Address Decoder'
+    class      = bridge
+    subclass   = HOST-PCI
+hostb2@pci0:255:2:0:	class=0x060000 rev=0x02 hdr=0x00 vendor=0x8086 device=0x2d10 subvendor=0x17aa subdevice=0x2196
+    vendor     = 'Intel Corporation'
+    device     = 'Core Processor QPI Link 0'
+    class      = bridge
+    subclass   = HOST-PCI
+hostb3@pci0:255:2:1:	class=0x060000 rev=0x02 hdr=0x00 vendor=0x8086 device=0x2d11 subvendor=0x17aa subdevice=0x2196
+    vendor     = 'Intel Corporation'
+    device     = '1st Generation Core i3/5/7 Processor QPI Physical 0'
+    class      = bridge
+    subclass   = HOST-PCI
+hostb4@pci0:255:2:2:	class=0x060000 rev=0x02 hdr=0x00 vendor=0x8086 device=0x2d12 subvendor=0x17aa subdevice=0x2196
+    vendor     = 'Intel Corporation'
+    device     = '1st Generation Core i3/5/7 Processor Reserved'
+    class      = bridge
+    subclass   = HOST-PCI
+hostb5@pci0:255:2:3:	class=0x060000 rev=0x02 hdr=0x00 vendor=0x8086 device=0x2d13 subvendor=0x17aa subdevice=0x2196
+    vendor     = 'Intel Corporation'
+    device     = '1st Generation Core i3/5/7 Processor Reserved'
+    class      = bridge
+    subclass   = HOST-PCI
+hostb6@pci0:0:0:0:	class=0x060000 rev=0x02 hdr=0x00 vendor=0x8086 device=0x0044 subvendor=0x17aa subdevice=0x2193
+    vendor     = 'Intel Corporation'
+    device     = 'Core Processor DRAM Controller'
+    class      = bridge
+    subclass   = HOST-PCI
+vgapci0@pci0:0:2:0:	class=0x030000 rev=0x02 hdr=0x00 vendor=0x8086 device=0x0046 subvendor=0x17aa subdevice=0x215a
+    vendor     = 'Intel Corporation'
+    device     = 'Core Processor Integrated Graphics Controller'
+    class      = display
+    subclass   = VGA
+none0@pci0:0:22:0:	class=0x078000 rev=0x06 hdr=0x00 vendor=0x8086 device=0x3b64 subvendor=0x17aa subdevice=0x215f
+    vendor     = 'Intel Corporation'
+    device     = '5 Series/3400 Series Chipset HECI Controller'
+    class      = simple comms
+uart2@pci0:0:22:3:	class=0x070002 rev=0x06 hdr=0x00 vendor=0x8086 device=0x3b67 subvendor=0x17aa subdevice=0x2162
+    vendor     = 'Intel Corporation'
+    device     = '5 Series/3400 Series Chipset KT Controller'
+    class      = simple comms
+    subclass   = UART
+em0@pci0:0:25:0:	class=0x020000 rev=0x06 hdr=0x00 vendor=0x8086 device=0x10ea subvendor=0x17aa subdevice=0x2153
+    vendor     = 'Intel Corporation'
+    device     = '82577LM Gigabit Network Connection'
+    class      = network
+    subclass   = ethernet
+ehci0@pci0:0:26:0:	class=0x0c0320 rev=0x06 hdr=0x00 vendor=0x8086 device=0x3b3c subvendor=0x17aa subdevice=0x2163
+    vendor     = 'Intel Corporation'
+    device     = '5 Series/3400 Series Chipset USB2 Enhanced Host Controller'
+    class      = serial bus
+    subclass   = USB
+hdac0@pci0:0:27:0:	class=0x040300 rev=0x06 hdr=0x00 vendor=0x8086 device=0x3b56 subvendor=0x17aa subdevice=0x215e
+    vendor     = 'Intel Corporation'
+    device     = '5 Series/3400 Series Chipset High Definition Audio'
+    class      = multimedia
+    subclass   = HDA
+pcib2@pci0:0:28:0:	class=0x060400 rev=0x06 hdr=0x01 vendor=0x8086 device=0x3b42 subvendor=0x17aa subdevice=0x2164
+    vendor     = 'Intel Corporation'
+    device     = '5 Series/3400 Series Chipset PCI Express Root Port 1'
+    class      = bridge
+    subclass   = PCI-PCI
+pcib3@pci0:0:28:1:	class=0x060400 rev=0x06 hdr=0x01 vendor=0x8086 device=0x3b44 subvendor=0x17aa subdevice=0x2164
+    vendor     = 'Intel Corporation'
+    device     = '5 Series/3400 Series Chipset PCI Express Root Port 2'
+    class      = bridge
+    subclass   = PCI-PCI
+pcib4@pci0:0:28:3:	class=0x060400 rev=0x06 hdr=0x01 vendor=0x8086 device=0x3b48 subvendor=0x17aa subdevice=0x2164
+    vendor     = 'Intel Corporation'
+    device     = '5 Series/3400 Series Chipset PCI Express Root Port 4'
+    class      = bridge
+    subclass   = PCI-PCI
+pcib5@pci0:0:28:4:	class=0x060400 rev=0x06 hdr=0x01 vendor=0x8086 device=0x3b4a subvendor=0x17aa subdevice=0x2164
+    vendor     = 'Intel Corporation'
+    device     = '5 Series/3400 Series Chipset PCI Express Root Port 5'
+    class      = bridge
+    subclass   = PCI-PCI
+ehci1@pci0:0:29:0:	class=0x0c0320 rev=0x06 hdr=0x00 vendor=0x8086 device=0x3b34 subvendor=0x17aa subdevice=0x2163
+    vendor     = 'Intel Corporation'
+    device     = '5 Series/3400 Series Chipset USB2 Enhanced Host Controller'
+    class      = serial bus
+    subclass   = USB
+pcib6@pci0:0:30:0:	class=0x060401 rev=0xa6 hdr=0x01 vendor=0x8086 device=0x2448 subvendor=0x17aa subdevice=0x2165
+    vendor     = 'Intel Corporation'
+    device     = '82801 Mobile PCI Bridge'
+    class      = bridge
+    subclass   = PCI-PCI
+isab0@pci0:0:31:0:	class=0x060100 rev=0x06 hdr=0x00 vendor=0x8086 device=0x3b07 subvendor=0x17aa subdevice=0x2166
+    vendor     = 'Intel Corporation'
+    device     = 'QM57 Chipset LPC Interface Controller'
+    class      = bridge
+    subclass   = PCI-ISA
+ahci0@pci0:0:31:2:	class=0x010601 rev=0x06 hdr=0x00 vendor=0x8086 device=0x3b2f subvendor=0x17aa subdevice=0x2168
+    vendor     = 'Intel Corporation'
+    device     = '5 Series/3400 Series Chipset 6 port SATA AHCI Controller'
+    class      = mass storage
+    subclass   = SATA
+ichsmb0@pci0:0:31:3:	class=0x0c0500 rev=0x06 hdr=0x00 vendor=0x8086 device=0x3b30 subvendor=0x17aa subdevice=0x2167
+    vendor     = 'Intel Corporation'
+    device     = '5 Series/3400 Series Chipset SMBus Controller'
+    class      = serial bus
+    subclass   = SMBus
+none1@pci0:0:31:6:	class=0x118000 rev=0x06 hdr=0x00 vendor=0x8086 device=0x3b32 subvendor=0x17aa subdevice=0x2190
+    vendor     = 'Intel Corporation'
+    device     = '5 Series/3400 Series Chipset Thermal Subsystem'
+    class      = dasp
+iwn0@pci0:3:0:0:	class=0x028000 rev=0x35 hdr=0x00 vendor=0x8086 device=0x4239 subvendor=0x8086 subdevice=0x1311
+    vendor     = 'Intel Corporation'
+    device     = 'Centrino Advanced-N 6200'
+    class      = network
+sdhci_pci0@pci0:13:0:0:	class=0x080500 rev=0x01 hdr=0x00 vendor=0x1180 device=0xe822 subvendor=0x17aa subdevice=0x2133
+    vendor     = 'Ricoh Co Ltd'
+    device     = 'MMC/SD Host Controller'
+    class      = base peripheral
+    subclass   = SD host controller
+none2@pci0:13:0:1:	class=0x088000 rev=0x01 hdr=0x00 vendor=0x1180 device=0xe230 subvendor=0x17aa subdevice=0x2134
+    vendor     = 'Ricoh Co Ltd'
+    device     = 'R5U2xx (R5U230 / R5U231 / R5U241) [Memory Stick Host Controller]'
+    class      = base peripheral
+none3@pci0:13:0:3:	class=0x0c0010 rev=0x01 hdr=0x00 vendor=0x1180 device=0xe832 subvendor=0x17aa subdevice=0x2136
+    vendor     = 'Ricoh Co Ltd'
+    device     = 'R5C832 PCIe IEEE 1394 Controller'
+    class      = serial bus
+    subclass   = FireWire
+
+[ USB Devices ]
+No device match or lack of permissions.
+
+[ Kernel Modules ]
+Id Refs Address                Size Name
+ 1   95 0xffffffff80200000  1f41458 kernel
+ 2    1 0xffffffff82143000     7808 cryptodev.ko
+ 3    1 0xffffffff8214b000   5e9340 zfs.ko
+ 4    1 0xffffffff82735000     9528 acpi_video.ko
+ 5    1 0xffffffff82e20000   1e0228 i915kms.ko
+ 6    2 0xffffffff83001000    85090 drm.ko
+ 7    1 0xffffffff83087000     22b8 iic.ko
+ 8    2 0xffffffff8308a000     4120 linuxkpi_video.ko
+ 9    3 0xffffffff8308f000     7350 dmabuf.ko
+10    3 0xffffffff83097000     3378 lindebugfs.ko
+11    1 0xffffffff8309b000     c338 ttm.ko
+12    1 0xffffffff830a8000    a7690 iwn6000g2afw.ko
+13    1 0xffffffff83150000     4210 acpi_ibm.ko
+14    1 0xffffffff83155000    12dc8 fusefs.ko
+15    1 0xffffffff83168000     3390 acpi_wmi.ko
+16    1 0xffffffff8316c000     4250 ichsmb.ko
+17    1 0xffffffff83171000     2178 smbus.ko
+18    1 0xffffffff83174000    30b08 linux.ko
+19    4 0xffffffff831a5000     c2a8 linux_common.ko
+20    1 0xffffffff831b2000    2de48 linux64.ko
+21    1 0xffffffff831e0000     2278 pty.ko
+22    1 0xffffffff831e3000     3560 fdescfs.ko
+23    1 0xffffffff831e7000     73c0 linprocfs.ko
+24    1 0xffffffff831ef000     440c linsysfs.ko
+25    1 0xffffffff831f4000     4d64 geom_uzip.ko
+26    1 0xffffffff831f9000     5be8 autofs.ko
+

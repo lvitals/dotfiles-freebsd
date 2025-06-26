@@ -1,0 +1,186 @@
+### ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+### 📦 Programas necessários (instalar com pkg)
+### ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+# pkg install sway
+# pkg install mako              # Para notify-send funcionar (notificações)
+# pkg install grim              # Para capturas de tela (screenshot)
+# pkg install slurp             # Para seleção de área da tela
+# pkg install wl-clipboard      # Para copiar imagem para clipboard
+# pkg install swaylock          # Para bloquear a tela
+# pkg install rofi              # Menu de aplicações
+# pkg install alacritty         # Terminal
+# pkg install sndio             # Controle de volume/mic com sndioctl
+# pkg install backlight         # Controle de brilho da tela (pode variar por hardware)
+
+### ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+### 🖌️ Aparência e Temas
+### ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+include ~/.config/sway/themes/catppuccin-mocha
+
+font pango:Sans 9
+
+client.focused          $mauve $base $mauve $surface0 $text
+client.unfocused        $surface0 $base $surface0 $base $overlay1
+client.focused_inactive $overlay0 $base $overlay0 $base $overlay1
+client.urgent           $red $base $red $surface0 $crust
+client.background       $base
+
+output * bg ~/.config/sway/wallpapers/tokyonight.jpg fill
+#exec_always {
+#  swww-daemon
+#  swww img ~/Imagens/Wallpapers/quarto.gif --transition-type grow --transition-duration 1
+#}
+
+bar {
+    position top
+    status_command ~/.config/sway/scripts/status.sh
+
+    colors {
+        statusline $text
+        background $base
+        inactive_workspace $surface0 $surface0 $subtext0
+        active_workspace $surface1 $lavender $text
+        focused_workspace $mauve $mauve $crust
+        urgent_workspace $red $red $base
+    }
+}
+
+### ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+### 🔠 Teclado e Input
+### ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+input * {
+    xkb_layout "br"
+    xkb_model "thinkpad"
+    repeat_delay 250
+    repeat_rate 30
+}
+
+### ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+### 🔧 Variáveis
+### ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+set $term alacritty
+set $menu rofi -show drun
+
+### ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+### ⌨️ Teclas de Atalho
+### ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+# Aplicativos
+bindsym $mod+Return exec $term
+bindsym $mod+d exec $menu
+bindsym $mod+Tab exec rofi -show window
+bindsym $mod+Shift+f exec rofi -show filebrowser
+
+# Sistema
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec ~/.config/sway/scripts/powermenu.sh
+bindsym $mod+F1 exec ~/.config/sway/scripts/shortcuts.sh
+bindsym $mod+Alt+l exec swaylock --color 000000
+
+# Foco entre janelas
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Mover janelas
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Layouts
+bindsym $mod+b splith
+bindsym $mod+v splitv
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+f fullscreen
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+
+# Workspaces
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# Redimensionar
+mode "resize" {
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+# Multimídia
+bindsym --locked XF86AudioMute exec "sndioctl output.level=!"
+bindsym --locked XF86AudioLowerVolume exec "sndioctl output.level=-0.1"
+bindsym --locked XF86AudioRaiseVolume exec "sndioctl output.level=+0.1"
+bindsym --locked XF86AudioMicMute exec "sndioctl input.mute=!"
+bindsym --locked XF86MonBrightnessDown exec backlight decr '10'
+bindsym --locked XF86MonBrightnessUp exec backlight incr '10'
+
+# Captura de tela
+bindsym Print exec bash -c 'file=~/Imagens/screenshot-$(date +%Y%m%d-%H%M%S).png; grim "$file" && notify-send -t 5000 "Captura de tela salva" "$file"'
+bindsym Shift+Print exec bash -c 'file=~/Imagens/screenshot-$(date +%Y%m%d-%H%M%S).png; grim -g "$(slurp)" "$file" && notify-send -t 5000 "Área capturada salva" "$file"'
+bindsym Ctrl+Print exec bash -c 'grim -g "$(slurp)" - | wl-copy && notify-send -t 5000 "Captura de tela" "Área copiada para o clipboard"'
+bindsym Ctrl+Shift+Print exec bash -c 'grim - | wl-copy && notify-send -t 5000 "Captura de tela" "Tela inteira copiada para o clipboard"'
+
+### ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+### ⚙️ Execuções e serviços
+### ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec systemctl --user start sway-session.target
+
+### XWayland
+xwayland enable
