@@ -36,7 +36,7 @@ cp -v "$DOTDIR/home/.profile" "$HOME/"
 # 📁 Restore ~/.config
 mkdir -p "$HOME/.config"
 
-for dir in sway alacritty rofi; do
+for dir in sway foot rofi; do
   if [ -d "$DOTDIR/home/.config/$dir" ]; then
     echo "▶ Copying ~/.config/$dir..."
     rm -rf "$HOME/.config/$dir"

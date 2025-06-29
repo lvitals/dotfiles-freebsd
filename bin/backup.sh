@@ -22,7 +22,7 @@ cp -v "$HOME/.profile" "$DOTDIR/home/"
 # Backups /home/.config
 mkdir -p "$DOTDIR/home/.config"
 cp -r "$HOME/.config/sway" "$DOTDIR/home/.config/"
-cp -r "$HOME/.config/alacritty" "$DOTDIR/home/.config/"
+cp -r "$HOME/.config/foot" "$DOTDIR/home/.config/"
 cp -r "$HOME/.config/rofi" "$DOTDIR/home/.config/"
 
 mkdir -p "$DOTDIR/pkg/"

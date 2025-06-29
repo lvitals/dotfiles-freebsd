@@ -28,6 +28,8 @@ client.urgent           $red $base $red $surface0 $crust
 client.background       $base
 
 output * bg ~/.config/sway/wallpapers/tokyonight.jpg fill
+#output '*' bg '#00263f' solid_color
+
 #exec_always {
 #  swww-daemon
 #  swww img ~/Imagens/Wallpapers/quarto.gif --transition-type grow --transition-duration 1
@@ -67,7 +69,8 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term alacritty
+#set $term alacritty
+set $term foot
 set $menu rofi -show drun
 
 ### ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
@@ -178,9 +181,9 @@ bindsym Ctrl+Shift+Print exec bash -c 'grim - | wl-copy && notify-send -t 5000 "
 ### ⚙️ Execuções e serviços
 ### ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec systemctl --user start sway-session.target
+#exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+#exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+#exec systemctl --user start sway-session.target
 
 ### XWayland
 xwayland enable

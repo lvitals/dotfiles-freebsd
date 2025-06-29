@@ -9,7 +9,7 @@ configuration {
 /*	fixed-num-lines: true;*/
 	show-icons: true;
 /*	preview-cmd: ;*/
-	terminal: "alacritty";
+	terminal: "foot";
 /*	ssh-client: "ssh";*/
 /*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
 /*	run-command: "{cmd}";*/

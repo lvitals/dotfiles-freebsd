@@ -1,7 +1,6 @@
 aalib
 abseil
 adwaita-icon-theme
-alacritty
 alsa-lib
 alsa-plugins
 at-spi2-core
@@ -44,11 +43,13 @@ exfat-utils
 expat
 ezquake
 fastfetch
+fcft
 fd
 fftw3
 fftw3-float
 flac
 fontconfig
+foot
 freetype2
 fribidi
 fusefs-exfat
