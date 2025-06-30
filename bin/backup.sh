@@ -12,6 +12,7 @@ cp -v /etc/login.conf "$DOTDIR/etc/$HOSTNAME/"
 # Backups /boot
 mkdir -p "$DOTDIR/boot/$HOSTNAME"
 cp -v /boot/loader.conf "$DOTDIR/boot/$HOSTNAME/"
+cp -v /boot/device.hints "$DOTDIR/boot/$HOSTNAME/"
 
 # Backups /home
 mkdir -p "$DOTDIR/home/"

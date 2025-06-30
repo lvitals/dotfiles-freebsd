@@ -60,7 +60,9 @@ fusefs-lkl
 fusefs-ntfs
 gdbm
 gdk-pixbuf2
+gettext
 gettext-runtime
+gettext-tools
 gh
 giflib
 git

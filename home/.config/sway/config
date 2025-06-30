@@ -38,7 +38,6 @@ output * bg ~/.config/sway/wallpapers/tokyonight.jpg fill
 bar {
     position top
     status_command ~/.config/sway/scripts/status.sh
-
     colors {
         statusline $text
         background $base
@@ -58,6 +57,15 @@ input * {
     xkb_model "thinkpad"
     repeat_delay 250
     repeat_rate 30
+}
+
+input type:touchpad {
+    tap enabled                # Ativa toque para clique
+    natural_scroll disabled    # Rolagem natural (como no celular)
+    dwt enabled                # Desativa o touchpad enquanto  (como no celular)digita
+    middle_emulation enabled   # Emula botão do meio com clique de dois botões
+    pointer_accel 0.5          # Ajusta aceleração do cursor (0 = nenhuma)
+    scroll_method two_finger   # Usa dois dedos para rolar
 }
 
 ### ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
@@ -180,6 +188,9 @@ bindsym Ctrl+Shift+Print exec bash -c 'grim - | wl-copy && notify-send -t 5000 "
 ### ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ### ⚙️ Execuções e serviços
 ### ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+# Daemon de notificação compatível com Wayland 
+exec mako
 
 #exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 #exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
