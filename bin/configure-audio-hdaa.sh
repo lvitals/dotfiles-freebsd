@@ -4,10 +4,10 @@ HINTS="/boot/device.hints"
 TMP="/tmp/hdaa_scan.$$"
 touch "$TMP"
 
-echo "🔎 Buscando codecs dev.hdaa..."
+echo "🔎 Searching for dev.hdaa codecs..."
 
 for DEV in $(sysctl -Na | grep -E '^dev\.hdaa\.[0-9]+\.nid[0-9]+_config$' | sed -E 's/dev\.hdaa\.([0-9]+)\..*/\1/' | sort -u); do
-    echo "🎧 Analisando dev.hdaa.$DEV..."
+    echo "🎧 Analyzing dev.hdaa.$DEV..."
 
     sysctl -a | grep "^dev.hdaa.$DEV.nid[0-9]\+_config" > "$TMP"
 
@@ -21,23 +21,23 @@ for DEV in $(sysctl -Na | grep -E '^dev\.hdaa\.[0-9]+\.nid[0-9]+_config$' | sed 
     HPHONE_HEX=$(echo "$HPHONE_LINE" | awk '{print $2}')
 
     if [ -z "$SPEAKER_NID" ] || [ -z "$HPHONE_NID" ]; then
-        echo "⚠️ Speaker ou Headphones não encontrados em dev.hdaa.$DEV"
+        echo "⚠️ Speaker or Headphones not found on dev.hdaa.$DEV"
         continue
     fi
 
-    echo "✅ Encontrado: Speaker (nid=$SPEAKER_NID, hex=$SPEAKER_HEX), Headphones (nid=$HPHONE_NID, hex=$HPHONE_HEX)"
+    echo "✅ Found: Speaker (nid=$SPEAKER_NID, hex=$SPEAKER_HEX), Headphones (nid=$HPHONE_NID, hex=$HPHONE_HEX)"
 
-    # Remove entradas antigas
+    # Remove old entries
     sed -i '' "/^hint.hdaa.$DEV.nid${SPEAKER_NID}.config/d" "$HINTS"
     sed -i '' "/^hint.hdaa.$DEV.nid${HPHONE_NID}.config/d" "$HINTS"
 
-    # Adiciona novas
+    # Add new entries
     echo "hint.hdaa.$DEV.nid${SPEAKER_NID}.config=\"$SPEAKER_HEX\"" >> "$HINTS"
     echo "hint.hdaa.$DEV.nid${HPHONE_NID}.config=\"$HPHONE_HEX\"" >> "$HINTS"
 
-    # Aplica reconfiguração
+    # Apply reconfiguration
     sysctl dev.hdaa.$DEV.reconfig=1
 done
 
 rm -f "$TMP"
-echo "✅ Configuração aplicada. Reinicie para tornar persistente."
+echo "✅ Configuration applied. Please reboot to make it persistent."
