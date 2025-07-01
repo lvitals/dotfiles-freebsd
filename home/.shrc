@@ -52,3 +52,13 @@ PS1="\u@\h:\w \\$ "
 
 # search path for cd(1)
 # CDPATH=:$HOME
+
+# Aliases úteis
+alias ls='ls -G'
+alias grep='grep --color=auto'
+alias diff='diff --color=auto'
+alias ll='ls -lAF'
+
+# Histórico
+HISTSIZE=500
+SAVEHIST=500
