@@ -1,5 +1,6 @@
 aalib
 abseil
+acpi_call
 adwaita-icon-theme
 alsa-lib
 alsa-plugins
@@ -251,6 +252,7 @@ png
 polkit
 portconfig
 portsnap
+powerdxx
 pulseaudio
 py311-dbus
 py311-evdev
@@ -295,7 +297,6 @@ tree-sitter
 unibilium
 unix-selfauth-helper
 unzip
-upower
 utf8proc
 vscode
 vulkan-loader
