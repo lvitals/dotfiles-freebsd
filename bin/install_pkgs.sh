@@ -21,7 +21,7 @@ if [ -f "$HOSTFILE" ]; then
   PKGS=$(eval $CMD)
 
   if [ -n "$PKGS" ]; then
-    sudo pkg install -y $PKGS
+    pkg install -y $PKGS
   else
     echo "ℹ️ Nenhum pacote para instalar após filtrar os ignorados."
   fi
