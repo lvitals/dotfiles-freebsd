@@ -27,16 +27,15 @@ client.focused_inactive $overlay0 $base $overlay0 $base $overlay1
 client.urgent           $red $base $red $surface0 $crust
 client.background       $base
 
-output * bg ~/.config/sway/wallpapers/dragon-knight.png fill
+#output * bg ~/.config/sway/wallpapers/dragon-knight.png fill
 #output * bg ~/.config/sway/wallpapers/tokyonight.jpg fill
 #output '*' bg '#00263f' solid_color
 
 # Uncomment to enable dynamic wallpapers with swww-daemon
-#exec_always {
-#   swww-daemon
-#   swww img ~/Pictures/Wallpapers/room.gif --transition-type grow --transition-duration 1
-#    swww img  ~/Imagens/Wallpapers/dragon-cavaleira.webp --transition-type grow --transition-duration 1
-#}
+exec_always {
+   swww-daemon
+   swww img ~/.config/sway/wallpapers/pixel-jeff-mario.gif --transition-type grow --transition-duration 1
+}
 
 bar {
     position top
