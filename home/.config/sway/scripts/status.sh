@@ -55,12 +55,14 @@ COLOR_LEVEL_EMPTY="#888888"  # Gray for the empty parts
 # ==== FUNCTIONS ====
 
 get_audio_volume() {
-    vol=$(sndioctl -n output.level 2>/dev/null | awk -F= '{
-        percent = $1 * 100;
-        rounded = int((percent + 5) / 10) * 10;
-        rounded = rounded < 0 ? 0 : (rounded > 100 ? 100 : rounded);
-        printf("%.0f", rounded);
-    }')
+    # vol=$(sndioctl -n output.level 2>/dev/null | awk -F= '{
+    #     percent = $1 * 100;
+    #     rounded = int((percent + 5) / 10) * 10;
+    #     rounded = rounded < 0 ? 0 : (rounded > 100 ? 100 : rounded);
+    #     printf("%.0f", rounded);
+    # }')
+
+    vol=$(mixer vol | awk -F'[=:]' '/volume/ {printf "%.0f\n", $2 * 100}')
 
     if [ -z "$vol" ]; then
         echo "N/A"
