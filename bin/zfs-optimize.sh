@@ -4,17 +4,6 @@
 #   Applies fixed ZFS performance options to known datasets in a FreeBSD system.
 #   Focused on reducing RAM/CPU usage for low-end hardware.
 
-# Detect privilege escalation command
-if command -v doas >/dev/null 2>&1; then
-    CMD="doas"
-elif command -v sudo >/dev/null 2>&1; then
-    CMD="sudo"
-else
-    echo "Error: Neither 'doas' nor 'sudo' found. Please install one."
-    exit 1
-fi
-
-
 echo "🔍 Detecting all ZFS datasets..."
 datasets=$(zfs list -H -o name)
 
@@ -38,16 +27,16 @@ for ds in $datasets; do
 
     echo "⚙️ Applying settings to dataset $ds mounted at $mountpoint"
 
-    $CMD zfs set compression=off "$ds"
-    $CMD zfs set atime=off "$ds"
-    $CMD zfs set dedup=off "$ds"
+    zfs set compression=off "$ds"
+    zfs set atime=off "$ds"
+    zfs set dedup=off "$ds"
 
     case "$mountpoint" in
         /tmp|/var/tmp)
-            $CMD zfs set sync=disabled "$ds"
+            zfs set sync=disabled "$ds"
             ;;
         *)
-            $CMD zfs set sync=standard "$ds"
+            zfs set sync=standard "$ds"
             ;;
     esac
 done
