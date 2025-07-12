@@ -212,6 +212,9 @@ xwayland enable
 set $internal eDP-1
 set $external HDMI-A-1
 
+workspace 1 output $internal
+workspace 2 output $external
+
 # Internal display (laptop)
 output $internal {
     pos 0 0
