@@ -8,7 +8,7 @@ ENABLE_BATTERY=true
 ENABLE_BATTERY_BAR=true
 ENABLE_DYNAMIC_BATTERY_ICON=true
 ENABLE_NETWORK=true
-INTERFACES="em0 wlan0"
+INTERFACES="re0 wlan0"
 
 # Date and Time Formats
 DATE_FORMAT='+%Y-%m-%d'
@@ -55,15 +55,14 @@ COLOR_LEVEL_EMPTY="#888888"  # Gray for the empty parts
 # ==== FUNCTIONS ====
 
 get_audio_volume() {
-    # vol=$(sndioctl -n output.level 2>/dev/null | awk -F= '{
-    #     percent = $1 * 100;
-    #     rounded = int((percent + 5) / 10) * 10;
-    #     rounded = rounded < 0 ? 0 : (rounded > 100 ? 100 : rounded);
-    #     printf("%.0f", rounded);
-    # }')
-
     vol=$(mixer vol | awk -F'[=:]' '/volume/ {printf "%.0f\n", $2 * 100}')
-
+    #vol=$(sndioctl -n output.level 2>/dev/null | awk -F= '{
+    #    percent = $1 * 100;
+    #    rounded = int((percent + 5) / 10) * 10;
+    #    rounded = rounded < 0 ? 0 : (rounded > 100 ? 100 : rounded);
+    #    printf("%.0f", rounded);
+    #}')
+    
     if [ -z "$vol" ]; then
         echo "N/A"
     else
@@ -94,10 +93,11 @@ get_power_icon() {
 # Returns a dynamic volume icon based on the level and mute status
 get_dynamic_volume_icon() {
     percent=$1
-    mute_status=$(sndioctl -n output.mute 2>/dev/null)
+    # mute_status=$(sndioctl -n output.mute 2>/dev/null)
+    mute_status=$(mixer vol | awk -F'[=]' '/mute/ {print $2}')
 
-    if [ "$mute_status" = "1" ] || [ "$percent" -eq 0 ]; then
-        icon=$ICON_VOL_MUTED
+    if [ "$mute_status" = "on" ] || [ "$percent" -eq 0 ]; then
+        icon="<span color='${COLOR_RED}'>${ICON_VOL_MUTED}</span>"
     elif [ "$percent" -gt 66 ]; then
         icon=$ICON_VOL_HIGH
     elif [ "$percent" -gt 33 ]; then

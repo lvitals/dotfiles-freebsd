@@ -209,28 +209,22 @@ xwayland enable
 
 # Use `swaymsg -t get_outputs` to verify actual output names and resolutions
 
-set $left 0
-set $right 1280
-set $top 0
-
-set $internal LVDS-1
-set $external VGA-1
+set $internal eDP-1
+set $external HDMI-A-1
 
 # Internal display (laptop)
 output $internal {
-    pos $left $top
+    pos 0 0
+    # mode 1920x1080
     scale 1
     transform normal
 }
 
 # External VGA monitor to the right of the internal screen
 output $external {
-    pos $right $top
-    mode 1920x1080
-    scale 1
+    pos 1920 0
+    # mode 2560x1600
+    scale 1.6
     transform normal
     # background ~/.config/sway/wallpapers/vga.png fill
 }
-
-
-

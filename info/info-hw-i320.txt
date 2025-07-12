@@ -1,0 +1,212 @@
+Hardware Report - HOSTNAME_REDACTED
+Generated on: sáb 12 jul 2025 18:04:07 -03
+------------------------------------------
+
+[ Hostname ]
+HOSTNAME_REDACTED
+
+[ System Information ]
+FreeBSD HOSTNAME_REDACTED 14.3-RELEASE FreeBSD 14.3-RELEASE releng/14.3-n271432-8c9ce319fef7 GENERIC amd64
+
+[ CPU ]
+Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz
+Cores: 4
+
+[ Memory ]
+Total RAM: 16125 MB
+
+[ Disks ]
+Geom name: ada1
+Providers:
+1. Name: ada1
+   Mediasize: 1000204886016 (932G)
+   Sectorsize: 512
+   Mode: r2w2e3
+   descr: SanDisk SSD PLUS 1000GB
+   lunid: 5001b448bf544b3f
+   ident: 23300T801789
+   rotationrate: 0
+   fwsectors: 63
+   fwheads: 16
+
+Geom name: ada0
+Providers:
+1. Name: ada0
+   Mediasize: 240057409536 (224G)
+   Sectorsize: 512
+   Mode: r2w2e3
+   descr: SanDisk SDSSDA240G
+   lunid: 5001b448b6961115
+   ident: 174504A00863
+   rotationrate: 0
+   fwsectors: 63
+   fwheads: 16
+
+
+[ Filesystems ]
+Filesystem            Size    Used   Avail Capacity  Mounted on
+zroot/ROOT/default    1,1T     13G    1,1T     1%    /
+devfs                 1,0K      0B    1,0K     0%    /dev
+zroot/tmp             1,1T     83M    1,1T     0%    /tmp
+zroot                 1,1T     96K    1,1T     0%    /zroot
+zroot/home            1,1T     96K    1,1T     0%    /home
+zroot/var/log         1,1T    752K    1,1T     0%    /var/log
+zroot/var/audit       1,1T     96K    1,1T     0%    /var/audit
+zroot/usr/ports       1,1T     10G    1,1T     1%    /usr/ports
+zroot/usr/src         1,1T    858M    1,1T     0%    /usr/src
+zroot/var/crash       1,1T     96K    1,1T     0%    /var/crash
+zroot/home/leandro    1,1T    1,5G    1,1T     0%    /home/leandro
+zroot/var/mail        1,1T    128K    1,1T     0%    /var/mail
+zroot/var/tmp         1,1T     96K    1,1T     0%    /var/tmp
+linprocfs             8,0K      0B    8,0K     0%    /compat/linux/proc
+linsysfs              8,0K      0B    8,0K     0%    /compat/linux/sys
+devfs                 1,0K      0B    1,0K     0%    /compat/linux/dev
+fdescfs               1,0K      0B    1,0K     0%    /compat/linux/dev/fd
+tmpfs                  16G    4,0K     16G     0%    /compat/linux/dev/shm
+map -hosts              0B      0B      0B   100%    /net
+
+[ Network Interfaces ]
+re0: flags=1008843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST,LOWER_UP> metric 0 mtu 1500
+	options=8209b<RXCSUM,TXCSUM,VLAN_MTU,VLAN_HWTAGGING,VLAN_HWCSUM,WOL_MAGIC,LINKSTATE>
+	ether XX:XX:XX:XX:XX:XX
+	inet XXX.XXX.XXX.XXX netmask 0xffffff00 broadcast 192.168.3.255
+	inet6 XXX:XXX:XXX:XXX:XXX%re0 prefixlen 64 scopeid 0x1
+	inet6 XXX:XXX:XXX:XXX:XXX prefixlen 64 autoconf pltime 3600 vltime 7200
+	media: Ethernet autoselect (1000baseT <full-duplex>)
+	status: active
+	nd6 options=23<PERFORMNUD,ACCEPT_RTADV,AUTO_LINKLOCAL>
+lo0: flags=1008049<UP,LOOPBACK,RUNNING,MULTICAST,LOWER_UP> metric 0 mtu 16384
+	options=680003<RXCSUM,TXCSUM,LINKSTATE,RXCSUM_IPV6,TXCSUM_IPV6>
+	inet XXX.XXX.XXX.XXX netmask 0xff000000
+	inet6 XXX:XXX:XXX:XXX:XXX prefixlen 128
+	inet6 XXX:XXX:XXX:XXX:XXX%lo0 prefixlen 64 scopeid 0x2
+	groups: lo
+	nd6 options=21<PERFORMNUD,AUTO_LINKLOCAL>
+
+[ PCI Devices ]
+hostb0@pci0:0:0:0:	class=0x060000 rev=0x02 hdr=0x00 vendor=0x8086 device=0x5904 subvendor=0x17aa subdevice=0x3817
+    vendor     = 'Intel Corporation'
+    device     = 'Xeon E3-1200 v6/7th Gen Core Processor Host Bridge/DRAM Registers'
+    class      = bridge
+    subclass   = HOST-PCI
+vgapci0@pci0:0:2:0:	class=0x030000 rev=0x02 hdr=0x00 vendor=0x8086 device=0x5916 subvendor=0x17aa subdevice=0x38e2
+    vendor     = 'Intel Corporation'
+    device     = 'HD Graphics 620'
+    class      = display
+    subclass   = VGA
+xhci0@pci0:0:20:0:	class=0x0c0330 rev=0x21 hdr=0x00 vendor=0x8086 device=0x9d2f subvendor=0x17aa subdevice=0x3844
+    vendor     = 'Intel Corporation'
+    device     = 'Sunrise Point-LP USB 3.0 xHCI Controller'
+    class      = serial bus
+    subclass   = USB
+pchtherm0@pci0:0:20:2:	class=0x118000 rev=0x21 hdr=0x00 vendor=0x8086 device=0x9d31 subvendor=0x17aa subdevice=0x3836
+    vendor     = 'Intel Corporation'
+    device     = 'Sunrise Point-LP Thermal subsystem'
+    class      = dasp
+ig4iic0@pci0:0:21:0:	class=0x118000 rev=0x21 hdr=0x00 vendor=0x8086 device=0x9d60 subvendor=0x17aa subdevice=0x383b
+    vendor     = 'Intel Corporation'
+    device     = 'Sunrise Point-LP Serial IO I2C Controller'
+    class      = dasp
+none0@pci0:0:22:0:	class=0x078000 rev=0x21 hdr=0x00 vendor=0x8086 device=0x9d3a subvendor=0x17aa subdevice=0x3843
+    vendor     = 'Intel Corporation'
+    device     = 'Sunrise Point-LP CSME HECI'
+    class      = simple comms
+ahci0@pci0:0:23:0:	class=0x010601 rev=0x21 hdr=0x00 vendor=0x8086 device=0x9d03 subvendor=0x17aa subdevice=0x383f
+    vendor     = 'Intel Corporation'
+    device     = 'Sunrise Point-LP SATA Controller [AHCI mode]'
+    class      = mass storage
+    subclass   = SATA
+pcib1@pci0:0:28:0:	class=0x060400 rev=0xf1 hdr=0x01 vendor=0x8086 device=0x9d10 subvendor=0x17aa subdevice=0x3834
+    vendor     = 'Intel Corporation'
+    device     = 'Sunrise Point-LP PCI Express Root Port'
+    class      = bridge
+    subclass   = PCI-PCI
+pcib2@pci0:0:28:4:	class=0x060400 rev=0xf1 hdr=0x01 vendor=0x8086 device=0x9d14 subvendor=0x17aa subdevice=0x383c
+    vendor     = 'Intel Corporation'
+    device     = 'Sunrise Point-LP PCI Express Root Port'
+    class      = bridge
+    subclass   = PCI-PCI
+pcib3@pci0:0:28:5:	class=0x060400 rev=0xf1 hdr=0x01 vendor=0x8086 device=0x9d15 subvendor=0x17aa subdevice=0x3824
+    vendor     = 'Intel Corporation'
+    device     = 'Sunrise Point-LP PCI Express Root Port'
+    class      = bridge
+    subclass   = PCI-PCI
+isab0@pci0:0:31:0:	class=0x060100 rev=0x21 hdr=0x00 vendor=0x8086 device=0x9d4e subvendor=0x17aa subdevice=0x3817
+    vendor     = 'Intel Corporation'
+    device     = 'Sunrise Point LPC/eSPI Controller'
+    class      = bridge
+    subclass   = PCI-ISA
+none1@pci0:0:31:2:	class=0x058000 rev=0x21 hdr=0x00 vendor=0x8086 device=0x9d21 subvendor=0x17aa subdevice=0x3845
+    vendor     = 'Intel Corporation'
+    device     = 'Sunrise Point-LP PMC'
+    class      = memory
+hdac0@pci0:0:31:3:	class=0x040300 rev=0x21 hdr=0x00 vendor=0x8086 device=0x9d71 subvendor=0x17aa subdevice=0x380d
+    vendor     = 'Intel Corporation'
+    device     = 'Sunrise Point-LP HD Audio'
+    class      = multimedia
+    subclass   = HDA
+ichsmb0@pci0:0:31:4:	class=0x0c0500 rev=0x21 hdr=0x00 vendor=0x8086 device=0x9d23 subvendor=0x17aa subdevice=0x3841
+    vendor     = 'Intel Corporation'
+    device     = 'Sunrise Point-LP SMBus'
+    class      = serial bus
+    subclass   = SMBus
+vgapci1@pci0:1:0:0:	class=0x030200 rev=0xa2 hdr=0x00 vendor=0x10de device=0x134d subvendor=0x17aa subdevice=0x38e2
+    vendor     = 'NVIDIA Corporation'
+    device     = 'GM108M [GeForce 940MX]'
+    class      = display
+    subclass   = 3D
+re0@pci0:2:0:0:	class=0x020000 rev=0x10 hdr=0x00 vendor=0x10ec device=0x8168 subvendor=0x17aa subdevice=0x3854
+    vendor     = 'Realtek Semiconductor Co., Ltd.'
+    device     = 'RTL8111/8168/8211/8411 PCI Express Gigabit Ethernet Controller'
+    class      = network
+    subclass   = ethernet
+none2@pci0:3:0:0:	class=0x028000 rev=0x31 hdr=0x00 vendor=0x168c device=0x0042 subvendor=0x17aa subdevice=0x0901
+    vendor     = 'Qualcomm Atheros'
+    device     = 'QCA9377 802.11ac Wireless Network Adapter'
+    class      = network
+
+[ USB Devices ]
+No device match or lack of permissions.
+
+[ Kernel Modules ]
+Id Refs Address                Size Name
+ 1  147 0xffffffff80200000  1f41458 kernel
+ 2    1 0xffffffff82142000     7808 cryptodev.ko
+ 3    1 0xffffffff8214a000   5e9340 zfs.ko
+ 4    1 0xffffffff82e20000   1af928 i915kms.ko
+ 5    2 0xffffffff82fd0000    79050 drm.ko
+ 6    1 0xffffffff8304a000     22b8 iic.ko
+ 7    3 0xffffffff8304d000     3080 linuxkpi_hdmi.ko
+ 8    3 0xffffffff83051000     6350 dmabuf.ko
+ 9    3 0xffffffff83058000     3378 lindebugfs.ko
+10    1 0xffffffff8305c000     b360 ttm.ko
+11    1 0xffffffff83068000    12dc8 fusefs.ko
+12    1 0xffffffff8307b000     3390 acpi_wmi.ko
+13    1 0xffffffff8307f000     4250 ichsmb.ko
+14    1 0xffffffff83084000     2178 smbus.ko
+15    1 0xffffffff83087000     6020 ig4.ko
+16    1 0xffffffff8308e000     2110 pchtherm.ko
+17    1 0xffffffff83091000    30b08 linux.ko
+18    4 0xffffffff830c2000     c2a8 linux_common.ko
+19    1 0xffffffff830cf000    2de48 linux64.ko
+20    1 0xffffffff830fd000     2278 pty.ko
+21    1 0xffffffff83100000     3560 fdescfs.ko
+22    1 0xffffffff83104000     73c0 linprocfs.ko
+23    1 0xffffffff8310c000     440c linsysfs.ko
+24    1 0xffffffff83111000     4d64 geom_uzip.ko
+25    1 0xffffffff83116000     3360 uhid.ko
+26    1 0xffffffff8311a000     4364 ums.ko
+27    1 0xffffffff8311f000     3360 wmt.ko
+28    1 0xffffffff83123000     5640 ng_ubt.ko
+29    7 0xffffffff83129000     abb8 netgraph.ko
+30    3 0xffffffff83134000     a250 ng_hci.ko
+31    4 0xffffffff8313f000     2670 ng_bluetooth.ko
+32    1 0xffffffff83142000     3218 iichid.ko
+33    1 0xffffffff83146000     e268 ng_l2cap.ko
+34    1 0xffffffff83155000    1bf98 ng_btsocket.ko
+35    1 0xffffffff83171000     3908 ng_socket.ko
+36    1 0xffffffff83175000     21e8 hms.ko
+37    1 0xffffffff83178000     30a8 hidmap.ko
+38    1 0xffffffff8317c000     21b8 ietp.ko
+39    1 0xffffffff8317f000     5be8 autofs.ko
+

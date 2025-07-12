@@ -7,7 +7,8 @@ DOTDIR=$(pwd)
 mkdir -p "$DOTDIR/etc/$HOSTNAME"
 cp -v /etc/rc.conf "$DOTDIR/etc/$HOSTNAME/"
 cp -v /etc/sysctl.conf "$DOTDIR/etc/$HOSTNAME/"
-cp -v /etc/login.conf "$DOTDIR/etc/$HOSTNAME/"
+cp -v /etc/login.conf "$DOTDIR/etc/"
+cp -v /etc/profile "$DOTDIR/etc/"
 
 # Backups /boot
 mkdir -p "$DOTDIR/boot/$HOSTNAME"
@@ -19,6 +20,7 @@ mkdir -p "$DOTDIR/home/"
 cp -v "$HOME/.shrc" "$DOTDIR/home/"
 cp -v "$HOME/.login" "$DOTDIR/home/"
 cp -v "$HOME/.profile" "$DOTDIR/home/"
+cp -v "$HOME/.login_conf" "$DOTDIR/home/"
 
 # Backups /home/.config
 mkdir -p "$DOTDIR/home/.config"
@@ -26,5 +28,6 @@ cp -r "$HOME/.config/sway" "$DOTDIR/home/.config/"
 cp -r "$HOME/.config/foot" "$DOTDIR/home/.config/"
 cp -r "$HOME/.config/rofi" "$DOTDIR/home/.config/"
 
-mkdir -p "$DOTDIR/pkg/"
-pkg query '%n' > pkg/T410.txt
+# Save the list of installed packages
+mkdir -p "$DOTDIR/pkg/$HOSTNAME"
+pkg query '%n' > "$DOTDIR/pkg/$HOSTNAME/pkglist.txt"

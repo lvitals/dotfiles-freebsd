@@ -1,30 +1,45 @@
 #!/bin/sh
 
 DOTDIR=$(pwd)
-#HOSTNAME=$(hostname)
-HOSTNAME="T410"
-
-HOSTFILE="$DOTDIR/pkg/$HOSTNAME.txt"
+PKGDIR="$DOTDIR/pkg"
 IGNORED_PKGS="vscode drm-61-kmod"
 
-echo "📦 Installing packages..."
+echo "📦 Available host configurations:"
+echo
 
-if [ -f "$HOSTFILE" ]; then
-  echo "▶ Installing packages..."
+# List available host folders under ./pkg/
+for d in "$PKGDIR"/*/; do
+  [ -d "$d" ] && echo " - $(basename "$d")"
+done
 
-  FILTER_CMD=""
-  for pkg in $IGNORED_PKGS; do
-    FILTER_CMD="$FILTER_CMD | grep -v -x $pkg"
-  done
+echo
+# Ask the user which host to install packages for
+printf "🔧 Enter the hostname to install packages from: "
+read HOSTNAME
 
-  CMD="grep -vE '^\s*#|^\s*$' \"$HOSTFILE\" $FILTER_CMD"
-  PKGS=$(eval $CMD)
+HOSTFILE="$PKGDIR/$HOSTNAME/pkglist.txt"
 
-  if [ -n "$PKGS" ]; then
-    pkg install -y $PKGS
-  else
-    echo "ℹ️ Nenhum pacote para instalar após filtrar os ignorados."
-  fi
+if [ ! -f "$HOSTFILE" ]; then
+  echo "❌ Package list not found for hostname: $HOSTNAME"
+  exit 1
+fi
+
+echo "▶ Installing packages from $HOSTFILE..."
+
+# Build filter to exclude ignored packages
+FILTER_CMD=""
+for pkg in $IGNORED_PKGS; do
+  FILTER_CMD="$FILTER_CMD | grep -v -x $pkg"
+done
+
+# Remove comments and empty lines, then apply filter
+CMD="grep -vE '^\s*#|^\s*$' \"$HOSTFILE\" $FILTER_CMD"
+PKGS=$(eval $CMD)
+
+if [ -n "$PKGS" ]; then
+  pkg install -y $PKGS
+else
+  echo "ℹ️ No packages to install after filtering ignored ones."
 fi
 
 echo "✅ Package installation completed."

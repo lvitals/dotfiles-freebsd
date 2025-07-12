@@ -38,3 +38,4 @@ fi
 if [ "$(tty)" = "/dev/ttyv0" ]; then
   exec sway -d > /tmp/sway.log 2>&1
 fi
+
